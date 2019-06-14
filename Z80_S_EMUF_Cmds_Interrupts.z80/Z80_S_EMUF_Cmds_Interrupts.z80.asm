@@ -212,17 +212,17 @@ Pop AF
 Ret
 
 //**************************************************
-//  Zeittakt Interrupt Testprogramm, nach jedem Interrupt
+//  Interrupt Testprogramm für PIO Port A, nach jedem Interrupt
 //  wird Interruptroutine INTPR1 angesprungen
 //**************************************************
 TINTZT            // a
 Push AF
 EI
-Ld A,%10000011   // Interrupt Freigabe
+Ld A,%10000011      // Interrupt Freigabe für PIO-A
 Out (PIO_A_Cont),A 
 Halt
 Ld A,%00000011
-Out (PIO_A_Cont),A 
+Out (PIO_A_Cont),A  // Interrupts für PIO-A gesperrt
 Pop AF 
 Ret
 
