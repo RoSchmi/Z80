@@ -1,0 +1,3 @@
+﻿[Memory Bank 0]
+Bank0    (merged segments)       ($0000 - $003c)
+Code                             ($0000 - $003c)

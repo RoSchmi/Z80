@@ -36,9 +36,6 @@ INPI1B     .equ $8402
 
 Stack      .equ $8700
 
-DelSpan .equ $FF        // Factor for Delay Loop
-
-
 Nop
 DI 
 IM 2
