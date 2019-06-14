@@ -1,0 +1,3 @@
+﻿[Memory Bank 0]
+Bank0    (merged segments)       ($4700 - $473a)
+Code                             ($4700 - $473a)
