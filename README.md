@@ -1,13 +1,13 @@
 # Z80 Test-Apps for Z80 Super EMUF and Z80 TERM 1
 
 Some applictations and tests made with Retro-Assembler and VS-Code for old (1983 and 1984) Z80 boards.
-####Z80 Super EMUF by W. Kanis GmbH
+#### Z80 Super EMUF by W. Kanis GmbH
 
-![gallery](Super EMUF.png)
+![gallery](Super_EMUF.png)
 
 and 
 
-####Z80 Terminal and Graphik-Subsystem TERM 1 by Graf Elektronik Systeme GmbH
+#### Z80 Terminal and Graphik-Subsystem TERM 1 by Graf Elektronik Systeme GmbH
 
 ![gallery](Term1.png)
 
