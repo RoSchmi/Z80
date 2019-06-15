@@ -1,13 +1,25 @@
 // Z80_S_EMUF_Cmds_Interrupts.z80
-
-// Das Programm toggelt zuerst 3 x Z80 PIO Port B Bit 0
-// Man kann hierdurch am Blinken der LED sehen, dass das Programm läuft
+//
+// Der Code befindet sich auf github.com/RoSchmi/Z80
+// Nach dem Laden auf das Board wird zuerst einige Male Z80 PIO Port B Bit 0 getoggelt.
+// Man kann hierdurch am Blinken einer angeschlossenen LED sehen, dass das Programm läuft
 // Danach wartet das Programm auf Zeichen über die serielle Schnittstelle.
-// Das empfangene Zeichen wir auf Z80 PIO Port B ausgegeben und zusätzlich
-// über die serielle Schnittstelle zum PC (Sender) zurückgeschickt.
+// Die Zeichen können z.B. über die C# Anwendung "Z80_Term_Utility" oder z.B. über Teraterm
+// an das Board gesendet werden. 
+// Das empfangene Zeichen wird über die serielle Schnittstelle zum PC (Sender) 
+// zurückgeschickt.
+// Es erfolgt eine Reaktion auf die Tasten 'a', 's' und 'd'.
+// a: Reagiert auf Impulse an PIO Port A, es wird Interrupt ausgelöst, --> '0' über UART
+// s: Zählt Impulse an Z0 CTC Pin CLK/TRG0. Nach jedem 10. Impuls erfolgt Interrupt
+//    bewirkt Ausgabe von '1' über UART.
+// d: Bewirkt Ausgabe einer Impulsfoge an ZC/T01. 
 // Das Programm wird mit der C# Anwendung "Z80_Term_Utility" auf den S-EMUF übertragen.
+// Dieses Programm befindet sich auch auf github.com/RoSchmi/Z80
 // Der Code startet automatisch ab Adresse 0x8000. Ob es funktioniert kann man mit einem
-// Oszilloskop an den Pins der Z80 PIO überprüfen oder das Blinken einer LED beobachten
+// Oszilloskop an den Pins der Z80 PIO überprüfen oder das Blinken einer angeschlossenen
+// LED beobachten.
+
+// Erstellt auf VS-Code mit https://enginedesigns.net/retroassembler
 
 .target "Z80"
 .org 0x8000
@@ -157,7 +169,7 @@ Jp @L4
 HALT
 
 Routa
-Call TINTZT            // Zeittakt Interrupt Testprogramm
+Call TINTZT            // PIO Interrupt Testprogramm
 Ret
 
 Routs
@@ -227,7 +239,7 @@ Ret
 //   Interruptprogramm git eine "0" ueber UART aus
 //**************************************************
 
-IntPr1
+IntPr1                  // PIO A Interrupt
 
 Ld A,$AF                // time = a x 2 msec
 Ld B,$02                // Count
