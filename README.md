@@ -2,6 +2,7 @@
 
 Some applictations and tests made with Retro-Assembler and VS-Code for old (1983 and 1984) Z80 boards.
 #### Z80 Super EMUF by W. Kanis GmbH
+https://www.z80cpu.eu/mirrors/oldcomputers.dyndns.org/public/pub/manuals/info.html
 
 ![gallery](Super_EMUF.png)
 
