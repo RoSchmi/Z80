@@ -9,6 +9,8 @@ https://www.z80cpu.eu/mirrors/oldcomputers.dyndns.org/public/pub/manuals/info.ht
 and 
 
 #### Z80 Terminal and Graphik-Subsystem TERM 1 by Graf Elektronik Systeme GmbH
+To find Google Search: mc-Grafik-Terminal
+or at http://www.vintagecomputer.net/
 
 ![gallery](Term1.png)
 
