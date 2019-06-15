@@ -29,7 +29,7 @@ jr @Start
         jp @RetCmd              //C33A47   Jump out of own Code (Back here with WE $4700)
 @Next1
         Ld A,C                  //79 
-@Out    
+@Out   
         Call 0x03C7             // Output byte in Reg C to STI-A             
         Call @Delay             // Delay ca. 200 msec
         Ld A,$0A        
